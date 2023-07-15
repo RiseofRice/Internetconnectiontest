@@ -31,10 +31,10 @@ def print_live_uptime(start_time, downtime, sent_packets, lost_packets):
         uptime_percent = calculate_uptime(start_time, current_time, downtime)
         sys.stdout.write("\rUptime: {:.2f}% | Laufzeit: {:.2f}s | Gesendete Pakete: {} | Verlorene Pakete: {}".format(uptime_percent, current_time - start_time, sent_packets, lost_packets))
         sys.stdout.flush()
-        time.sleep(5)
+        time.sleep(1)
 
 def main():
-    interval = 60  # Intervall zwischen den Überprüfungen in Sekunden
+    interval = 5  # Intervall zwischen den Überprüfungen in Sekunden
     runtime = 3600  # Gesamtdauer der Überwachung in Sekunden
     start_time = time.time()
     end_time = start_time + runtime
